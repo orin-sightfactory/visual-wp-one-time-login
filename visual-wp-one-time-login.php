@@ -21,8 +21,8 @@ function otl_login_user() {
             wp_clear_auth_cookie();
             wp_set_current_user($user_id);
             wp_set_auth_cookie($user_id);
-            //delete_transient('otl_login_' . $token);
-	        //delete_transient('otl_login_url' . $token);
+            delete_transient('otl_login_' . $token);
+	    delete_transient('otl_login_url' . $token);
 	
             wp_safe_redirect($url_redirect);
 
